@@ -142,16 +142,21 @@ function updateCountdown(){
   el.textContent=`${d} days · ${h} hours · ${m} minutes`;
 }
 
+function slugifyDay(date){
+  return "day-" + date.toLowerCase().replace(/\s+/g,"-");
+}
+
 function renderItinerary(){
-  document.getElementById("itineraryList").innerHTML=itinerary.map(day=>{
+  document.getElementById("itineraryList").innerHTML=itinerary.map((day,dayIndex)=>{
     const wx=dailyWeather[day.date];
     const restaurant=dailyRestaurants[day.date];
     const appList=dailyApps[day.date]||["Google Maps"];
     return `
-    <article class="day-card">
+    <article class="day-card premium-day" id="${slugifyDay(day.date)}">
       <div class="day-header">
+        <div class="day-number"><span>Day</span><strong>${dayIndex+1}</strong></div>
         <div class="day-date">${day.date}</div>
-        <div>
+        <div class="day-title-block">
           <h3>${day.title}</h3>
           <p><strong>Transport:</strong> ${day.transport}</p>
           <p><strong>Stay:</strong> ${day.stay}</p>
@@ -161,47 +166,69 @@ function renderItinerary(){
 
       <div class="day-weather">
         <div class="weather-icon">🌦</div>
-        <div>
-          <span>Latest forecast for ${wx.city}</span>
+        <div class="weather-main">
+          <span>Forecast snapshot · ${wx.city}</span>
           <h4>${wx.summary}</h4>
           <p><strong>${wx.temp}</strong> · ${wx.advice}</p>
         </div>
+        <div class="weather-source">Updated 19 Jul</div>
       </div>
 
-      <div class="schedule">
-        ${day.schedule.map(item=>{
-          const detail=sightDetails[item[1]];
-          return `
-          <div class="schedule-row sightseeing-entry">
-            <div class="schedule-time">${item[0]}</div>
-            <div class="schedule-copy">
-              ${detail?`<img class="sight-image" src="${detail.image}" alt="${item[1]}" loading="lazy">`:""}
-              <h4>${item[1]}</h4>
-              ${detail?`<p class="sight-description">${detail.description}</p>`:""}
-              <p class="plan-note"><strong>Plan:</strong> ${item[2]}</p>
-              ${detail?`<p class="route-advice"><strong>Walking / transport:</strong> ${detail.transport}</p>`:""}
-              ${item[3]?`<a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${item[3]}">Open sightseeing map ↗</a>`:""}
-            </div>
-          </div>`}).join("")}
+      <div class="day-section-label">
+        <span>Detailed schedule</span>
+        <button class="collapse-day" type="button" aria-expanded="true">Hide details</button>
       </div>
 
-      <div class="daily-restaurant">
-        <div class="restaurant-icon">🍛</div>
-        <div>
-          <span>Indian / South Indian option for this day</span>
-          <h4>${restaurant.name}</h4>
-          <p>${restaurant.type}</p>
-          <p><strong>How it fits the itinerary:</strong> ${restaurant.timing}</p>
-          <a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${restaurant.map}">Open restaurant map ↗</a>
+      <div class="day-collapsible">
+        <div class="schedule premium-timeline">
+          ${day.schedule.map((item,itemIndex)=>{
+            const detail=sightDetails[item[1]];
+            return `
+            <div class="schedule-row sightseeing-entry">
+              <div class="schedule-time"><span>${item[0]}</span><i></i></div>
+              <div class="schedule-copy">
+                ${detail?`<div class="image-wrap"><img class="sight-image" src="${detail.image}" alt="${item[1]}" loading="lazy"><span class="image-badge">Sight ${itemIndex+1}</span></div>`:""}
+                <div class="sight-heading">
+                  <h4>${item[1]}</h4>
+                  ${detail?`<span class="family-badge">Family stop</span>`:""}
+                </div>
+                ${detail?`<p class="sight-description">${detail.description}</p>`:""}
+                <div class="detail-box plan-box"><strong>What we will do</strong><p>${item[2]}</p></div>
+                ${detail?`<div class="detail-box route-box"><strong>Walking / transport</strong><p>${detail.transport}</p></div>`:""}
+                ${item[3]?`<a class="map-button" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${item[3]}">Open sightseeing map <span>↗</span></a>`:""}
+              </div>
+            </div>`}).join("")}
+        </div>
+
+        <div class="daily-restaurant premium-food">
+          <div class="restaurant-icon">🍛</div>
+          <div class="restaurant-content">
+            <span>Indian / South Indian option integrated into this day</span>
+            <h4>${restaurant.name}</h4>
+            <p class="restaurant-type">${restaurant.type}</p>
+            <div class="restaurant-fit"><strong>How it fits today</strong><p>${restaurant.timing}</p></div>
+            <a class="map-button food-map" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${restaurant.map}">Open restaurant map <span>↗</span></a>
+          </div>
+        </div>
+
+        <div class="day-notes">
+          <div class="note-box"><span class="note-icon">🥪</span><h4>Food plan</h4><p>${day.food}</p></div>
+          <div class="note-box"><span class="note-icon">✨</span><h4>Optional</h4><p>${day.optional}</p></div>
+          <div class="note-box note-wide"><span class="note-icon">✓</span><h4>Practical notes</h4><ul>${day.notes.map(n=>`<li>${n}</li>`).join("")}</ul></div>
         </div>
       </div>
-
-      <div class="day-notes">
-        <div class="note-box"><h4>Food plan</h4><p>${day.food}</p></div>
-        <div class="note-box"><h4>Optional</h4><p>${day.optional}</p></div>
-        <div class="note-box note-wide"><h4>Practical notes</h4><ul>${day.notes.map(n=>`<li>${n}</li>`).join("")}</ul></div>
-      </div>
     </article>`}).join("");
+
+  document.querySelectorAll(".collapse-day").forEach(button=>{
+    button.addEventListener("click",()=>{
+      const card=button.closest(".day-card");
+      const content=card.querySelector(".day-collapsible");
+      const expanded=button.getAttribute("aria-expanded")==="true";
+      button.setAttribute("aria-expanded",String(!expanded));
+      content.classList.toggle("collapsed",expanded);
+      button.textContent=expanded?"Show details":"Hide details";
+    });
+  });
 }
 function renderBookings(){
   const list=document.getElementById("bookingList");
@@ -229,6 +256,8 @@ function setupTheme(){
     localStorage.setItem("scandiFinalTheme",document.body.classList.contains("dark")?"dark":"light");
   });
 }
+
+document.getElementById("printTrip").addEventListener("click",()=>window.print());
 
 document.getElementById("resetPacking").addEventListener("click",()=>{localStorage.removeItem("scandiFinalPacking");renderPacking();});
 renderItinerary();renderBookings();renderPacking();setupTheme();updateCountdown();setInterval(updateCountdown,60000);
