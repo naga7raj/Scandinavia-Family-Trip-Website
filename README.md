@@ -77,3 +77,10 @@ This is the upload-ready correction.
 - Cache-busting parameters were added to `style.css` and `script.js` so GitHub Pages does not continue showing the old cached version.
 
 Upload the entire extracted folder, including `images/verified/`.
+
+
+## Version 6 — Final Real Photos
+
+All visible runtime images now use exact Wikimedia Commons destination photographs.
+No Great Wall, China-related, SVG placeholder, or local `images/verified` runtime reference remains.
+Generic schedule activities reuse the correct city, route, transport, cruise or attraction photograph.
