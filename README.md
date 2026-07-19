@@ -84,3 +84,16 @@ Upload the entire extracted folder, including `images/verified/`.
 All visible runtime images now use exact Wikimedia Commons destination photographs.
 No Great Wall, China-related, SVG placeholder, or local `images/verified` runtime reference remains.
 Generic schedule activities reuse the correct city, route, transport, cruise or attraction photograph.
+
+
+## Version 6.1 — Offline Stable
+
+This version removes all externally hosted images. Every visible image is stored locally in `images/final/`.
+
+It therefore avoids:
+- “Photo temporarily not available”
+- Wikimedia hotlink failures
+- browser blocking of external images
+- external image changes
+
+Upload the complete package, including `images/final/`.

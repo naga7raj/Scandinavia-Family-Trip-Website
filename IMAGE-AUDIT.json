@@ -1,6 +1,11 @@
 {
-  "version": "6 Final Real Photos",
-  "china_or_great_wall_terms": [],
-  "local_runtime_image_refs": [],
-  "commons_urls": 18
+  "version": "6.1 Offline Stable",
+  "remote_image_urls": [],
+  "local_images": [
+    "images/final/bergen-fjord.jpg",
+    "images/final/copenhagen-nyhavn.jpg",
+    "images/final/oslo-opera-house.jpg",
+    "images/final/overnight-cruise.jpg"
+  ],
+  "note": "All visible website images are local and do not depend on Wikimedia or other external image hosts."
 }
