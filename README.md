@@ -33,3 +33,6 @@ Most images are remote optimized photographs so GitHub Pages remains lightweight
 - Bergen: Familievennlig leilighet med gode solforhold, Fana, hosted by Camilla
 - Oslo: Scandic Byporten, Superior Twin Room
 - Copenhagen: CABINN Metro, two Standard Rooms
+
+
+Public Edition: host names, direct booking links, exact room types and exact check-in/out times have been generalized for privacy.
