@@ -61,3 +61,19 @@ This version removes the unreliable stock-image mapping that caused the Great Wa
 - Every image is stored inside the package.
 - No itinerary image depends on an external stock-photo URL.
 - Where an exact landmark photograph was not verified, the site intentionally uses a clearly labelled activity illustration rather than an unrelated photograph.
+
+
+## Version 5.3 — Final Relevant Images
+
+This is the upload-ready correction.
+
+- The incorrect Great Wall image file has been physically overwritten.
+- Oslo Opera House now uses the approved Oslo waterfront image.
+- Mostraumen now uses a fjord, mountains and waterfall image.
+- The overnight cruise uses a cruise-ship image.
+- Nyhavn uses a Copenhagen waterfront image.
+- All itinerary image references are local.
+- No external image URLs remain.
+- Cache-busting parameters were added to `style.css` and `script.js` so GitHub Pages does not continue showing the old cached version.
+
+Upload the entire extracted folder, including `images/verified/`.
