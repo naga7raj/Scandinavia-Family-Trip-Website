@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Scandinavia family trip dashboard for Bergen, Oslo and Copenhagen in July 2026.">
   <meta name="theme-color" content="#0b4f4b">
-  <title>Scandinavia Family Trip 2026 · Premium V5</title>
+  <title>Scandinavia Family Trip 2026 · Visual Refresh V5.1</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="visual-dashboard-v51">
   <header class="topbar">
     <a class="brand" href="#home">
       <span class="brand-mark">N</span>
@@ -27,7 +27,39 @@
     <div class="top-actions"><button id="printTrip" class="icon-button" aria-label="Print or save as PDF">⎙</button><button id="themeToggle" class="icon-button" aria-label="Toggle dark mode">◐</button></div>
   </header>
 
-  <main>
+  
+<aside class="v51-sidebar" aria-label="Trip navigation">
+  <div class="v51-brand">
+    <div class="v51-brand-mark">▲</div>
+    <div>
+      <strong>SCANDINAVIA 2026</strong>
+      <span>Family Adventure</span>
+    </div>
+  </div>
+
+  <section class="v51-side-card">
+    <h3>Trip route</h3>
+    <ol class="v51-route">
+      <li><span>✈</span><div><strong>Amsterdam</strong><small>Start & end</small></div></li>
+      <li><span>⛰</span><div><strong>Bergen</strong><small>21–23 Jul</small></div></li>
+      <li><span>🚆</span><div><strong>Oslo</strong><small>23–24 Jul</small></div></li>
+      <li><span>⛴</span><div><strong>Overnight cruise</strong><small>24–25 Jul</small></div></li>
+      <li><span>🏙</span><div><strong>Copenhagen</strong><small>25–27 Jul</small></div></li>
+      <li><span>✈</span><div><strong>Amsterdam</strong><small>Return</small></div></li>
+    </ol>
+  </section>
+
+  <section class="v51-side-card v51-quick-links">
+    <h3>Quick links</h3>
+    <a href="#map">🗺 View full map</a>
+    <a href="#bookings">🎫 Booking tracker</a>
+    <a href="#packing">🧳 Packing checklist</a>
+    <a href="#essentials">📋 Travel essentials</a>
+    <a href="#restaurants">🍛 Indian restaurants</a>
+  </section>
+</aside>
+
+<main>
     <section id="home" class="hero">
       <div class="hero-shade"></div>
       <div class="hero-content">
@@ -112,7 +144,77 @@
       </div>
     </section>
 
-    <section id="itinerary" class="section alternate">
+    
+<section class="v51-summary-grid" aria-label="Trip overview">
+  <article class="v51-highlight-card v51-oslo-card">
+    <div class="v51-card-image">
+      <img src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=1400&q=86" alt="Oslo Opera House waterfront" loading="eager">
+      <span class="v51-time-chip">10:00</span>
+    </div>
+    <div class="v51-card-body">
+      <h2>Oslo City Highlights</h2>
+      <div class="v51-plan-box"><strong>What we will do</strong><p>Visit the Opera House, explore MUNCH and stroll through Vigeland Sculpture Park.</p></div>
+      <p>📍 Oslo, Norway</p>
+      <p>🚶 Mostly walking day</p>
+      <p>📷 Great photo opportunities</p>
+      <a class="map-button" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Oslo+Opera+House">View on map ↗</a>
+    </div>
+  </article>
+
+  <article class="v51-highlight-card v51-cruise-card">
+    <div class="v51-card-image">
+      <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=1400&q=86" alt="Overnight cruise ship at sea" loading="lazy">
+      <span class="v51-time-chip">16:30</span>
+    </div>
+    <div class="v51-card-body">
+      <h2>Overnight Cruise to Copenhagen</h2>
+      <div class="v51-plan-box"><strong>What we will do</strong><p>Board the overnight cruise and enjoy fjord views, dinner and family relaxation.</p></div>
+      <p>📍 Oslo cruise terminal</p>
+      <p>⛴ Arrival in Copenhagen next morning</p>
+      <p>🌅 Scenic deck views</p>
+      <a class="map-button" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Oslo+cruise+terminal">View on map ↗</a>
+    </div>
+  </article>
+
+  <article class="v51-highlight-card v51-cph-card">
+    <div class="v51-card-image">
+      <img src="https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?auto=format&fit=crop&w=1400&q=86" alt="Nyhavn waterfront in Copenhagen" loading="lazy">
+      <span class="v51-time-chip">09:30</span>
+    </div>
+    <div class="v51-card-body">
+      <h2>Welcome to Copenhagen</h2>
+      <div class="v51-plan-box"><strong>What we will do</strong><p>Explore Nyhavn, Tivoli Gardens and enjoy a relaxed family day.</p></div>
+      <p>📍 Copenhagen, Denmark</p>
+      <p>🚇 Metro and walking</p>
+      <p>👨‍👩‍👧 Family-focused day</p>
+      <a class="map-button" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Nyhavn+Copenhagen">View on map ↗</a>
+    </div>
+  </article>
+
+  <aside class="v51-right-rail">
+    <section class="v51-widget">
+      <span class="v51-widget-label">Today's weather</span>
+      <div class="v51-weather-big">☀️ <strong>22°C</strong></div>
+      <p>Partly cloudy</p>
+      <small>High 23° · Low 14°</small>
+    </section>
+    <section class="v51-widget v51-tip-widget">
+      <span class="v51-widget-label">Quick tip</span>
+      <p>Wear comfortable walking shoes. Weather can change quickly.</p>
+    </section>
+    <section class="v51-widget">
+      <span class="v51-widget-label">Apps to use</span>
+      <ul>
+        <li>Ruter</li>
+        <li>Google Maps</li>
+        <li>Go Nordic Cruiseline</li>
+        <li>XE Currency</li>
+      </ul>
+    </section>
+  </aside>
+</section>
+
+<section id="itinerary" class="section alternate">
       <div class="section-heading">
         <p class="eyebrow">Day by day</p>
         <h2>Detailed family itinerary</h2>

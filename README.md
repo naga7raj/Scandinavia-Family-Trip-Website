@@ -36,3 +36,17 @@ Most images are remote optimized photographs so GitHub Pages remains lightweight
 
 
 Public Edition: host names, direct booking links, exact room types and exact check-in/out times have been generalized for privacy.
+
+
+## Version 5.1 Visual Refresh
+
+This edition applies the approved dashboard view:
+
+- fixed desktop trip-route sidebar
+- large image-led city and cruise cards
+- right-side weather, tips and apps rail
+- improved visual hierarchy and spacing
+- relevant Oslo Opera House, cruise and Copenhagen imagery
+- responsive fallback for tablets and phones
+
+The Great Wall of China image has been removed from the refreshed design.
