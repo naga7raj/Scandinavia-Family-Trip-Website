@@ -1,4 +1,4 @@
-# Scandinavia Family Trip — Premium Family Edition V4
+# Scandinavia Family Trip — Premium Family Edition V4.2 Accommodation Fix
 
 Public, mobile-friendly family travel dashboard for 21–27 July 2026.
 
@@ -37,3 +37,16 @@ The site excludes booking references, PINs, QR codes, payment information, perso
 - Restaurant websites and Google Maps search links
 
 Sightseeing photographs are loaded from Unsplash and are illustrative. Verify attraction opening times, restaurant hours and exact transport routing shortly before travel.
+
+
+## V4.1 visual update
+
+The hero and day sections now use brighter teal, blue, coral and warm-gold accents with reduced dark overlays while preserving strong text contrast.
+
+
+## V4.2 correction
+
+- Replaced the incorrect bedroom image that appeared under VilVite Science Centre with a science/technology image.
+- Accommodation previews now appear only at the relevant check-in entries for Bergen, Oslo and Copenhagen.
+- Accommodation cards have their own label and are not counted as sightseeing.
+- Public versions use illustrative accommodation images so exact private property details are not exposed.

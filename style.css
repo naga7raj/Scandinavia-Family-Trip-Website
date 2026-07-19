@@ -174,3 +174,340 @@ body.dark .day-jump{background:rgba(20,35,33,.86)}
   .section,.alternate{padding:30px 5%;background:#fff}.day-card{break-inside:avoid-page;box-shadow:none}
   .day-collapsible.collapsed{max-height:none;opacity:1}.sight-image{height:220px}.map-button{background:#eee;color:#111}
 }
+
+/* =========================================================
+   V4.1 — BRIGHTER PREMIUM COLOUR REFRESH
+   Minimal black overlay, more colour, stronger readability
+   ========================================================= */
+
+:root{
+  --primary:#08786f;
+  --primary-2:#19a89a;
+  --primary-soft:#dff7f2;
+  --gold:#f2b84b;
+  --coral:#ef835f;
+  --sky:#74b8e8;
+  --lavender:#b8a7e8;
+  --text:#153c39;
+  --muted:#5f7673;
+  --surface:#ffffff;
+  --surface-2:#f3fbf9;
+  --border:rgba(21,60,57,.12);
+}
+
+/* Hero: lighter teal-blue gradient instead of black */
+.hero-shade{
+  background:
+    linear-gradient(90deg,
+      rgba(5,84,78,.82) 0%,
+      rgba(8,120,111,.60) 42%,
+      rgba(56,137,170,.30) 74%,
+      rgba(255,255,255,.06) 100%);
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(180deg,
+      rgba(255,255,255,.05) 0%,
+      rgba(255,255,255,0) 52%,
+      rgba(7,81,75,.18) 100%);
+}
+
+.hero-copy{
+  position:relative;
+  z-index:2;
+}
+
+.hero h1{
+  color:#fffdf8;
+  text-shadow:
+    0 3px 18px rgba(3,58,54,.28),
+    0 1px 2px rgba(3,58,54,.18);
+}
+
+.hero .eyebrow{
+  color:#8ff4e8;
+  text-shadow:none;
+}
+
+.hero-copy > p:not(.eyebrow){
+  color:rgba(255,255,255,.96);
+  text-shadow:0 2px 10px rgba(3,58,54,.24);
+}
+
+.hero .button.primary{
+  background:linear-gradient(135deg,#fff,#e9fff9);
+  color:#075a54;
+  border:none;
+  box-shadow:0 12px 28px rgba(3,58,54,.18);
+}
+
+.hero .button.secondary{
+  color:#fff;
+  border-color:rgba(255,255,255,.72);
+  background:rgba(255,255,255,.13);
+  backdrop-filter:blur(8px);
+}
+
+.hero .button.secondary:hover{
+  background:rgba(255,255,255,.24);
+}
+
+/* Brighter top navigation */
+.topbar{
+  background:linear-gradient(90deg,#0c4f4a,#0f6e66);
+  border-bottom:1px solid rgba(255,255,255,.10);
+}
+
+.topbar a,
+.topbar .brand{
+  color:#ffffff;
+}
+
+.topbar nav a:hover{
+  color:#aaf7ed;
+}
+
+/* Trip notice with brighter glass appearance */
+.trip-notice{
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.94),rgba(230,250,246,.92));
+  color:var(--text);
+  border:1px solid rgba(8,120,111,.14);
+  box-shadow:0 18px 40px rgba(9,100,94,.14);
+}
+
+.trip-notice span{
+  color:var(--primary);
+}
+
+.trip-notice p{
+  color:var(--muted);
+}
+
+/* Brighter page sections */
+.alternate{
+  background:
+    radial-gradient(circle at 15% 18%,rgba(116,184,232,.10),transparent 23%),
+    radial-gradient(circle at 88% 24%,rgba(239,131,95,.08),transparent 20%),
+    #f7fbfa;
+}
+
+.section-heading .eyebrow{
+  color:var(--coral);
+}
+
+.section-heading h2{
+  color:#123f3b;
+}
+
+/* Route cards */
+.city-card{
+  border:1px solid rgba(255,255,255,.35);
+  box-shadow:0 16px 34px rgba(16,82,77,.13);
+}
+
+.city-overlay{
+  background:
+    linear-gradient(180deg,
+      rgba(10,86,80,.02) 10%,
+      rgba(8,103,96,.35) 55%,
+      rgba(4,74,69,.80) 100%);
+}
+
+.city-copy h3{
+  color:#fff;
+}
+
+.city-copy p,
+.city-copy span,
+.city-copy b{
+  color:rgba(255,255,255,.94);
+}
+
+/* Day headers: more vibrant teal and blue */
+.premium-day .day-header{
+  background:
+    radial-gradient(circle at 90% 18%,rgba(255,255,255,.20),transparent 27%),
+    radial-gradient(circle at 10% 100%,rgba(116,184,232,.22),transparent 34%),
+    linear-gradient(135deg,#0a8b81,#0b6e86 72%,#4e84b8);
+}
+
+.day-number{
+  background:rgba(255,255,255,.18);
+  border-color:rgba(255,255,255,.34);
+}
+
+.day-tools .app-chip{
+  background:rgba(255,255,255,.19);
+  border-color:rgba(255,255,255,.30);
+}
+
+/* Weather card */
+.day-weather{
+  background:
+    linear-gradient(135deg,#eef9ff,#f4fffb);
+  border-left:5px solid #65aee0;
+}
+
+/* Sightseeing cards */
+.schedule-copy{
+  background:#fff;
+  border-radius:20px;
+  padding:20px;
+  box-shadow:0 12px 28px rgba(18,84,79,.08);
+  border:1px solid rgba(21,60,57,.08);
+}
+
+.detail-box.plan-box{
+  background:linear-gradient(135deg,#fff8e8,#fffdf7);
+}
+
+.detail-box.route-box{
+  background:linear-gradient(135deg,#edf8ff,#f7fcff);
+}
+
+.family-badge{
+  background:#e3f8f0;
+  color:#11745a;
+}
+
+/* Restaurant card with warm colours */
+.premium-food{
+  background:
+    radial-gradient(circle at 100% 0,rgba(242,184,75,.20),transparent 34%),
+    linear-gradient(135deg,#fffaf1,#fff);
+  border-left-color:#f0a83d;
+}
+
+.food-map{
+  background:linear-gradient(135deg,#d86c42,#b94d2c);
+}
+
+/* Notes */
+.note-box{
+  background:linear-gradient(180deg,#fff,#f8fcfb);
+}
+
+.note-box:nth-child(1){
+  border-top:4px solid var(--gold);
+}
+
+.note-box:nth-child(2){
+  border-top:4px solid var(--lavender);
+}
+
+.note-box:nth-child(3){
+  border-top:4px solid var(--primary-2);
+}
+
+/* Day navigation */
+.day-jump{
+  background:rgba(255,255,255,.92);
+  border-color:rgba(8,120,111,.14);
+}
+
+.day-jump a:hover{
+  background:linear-gradient(135deg,#eafaf6,#eef7ff);
+}
+
+/* Buttons and links */
+.map-button{
+  background:linear-gradient(135deg,#0b8a80,#087269);
+}
+
+.map-button:hover{
+  box-shadow:0 12px 24px rgba(8,114,105,.24);
+}
+
+/* Footer */
+.footer{
+  background:linear-gradient(135deg,#0b5f59,#123f4e);
+  color:rgba(255,255,255,.92);
+}
+
+/* Dark mode still readable but less black */
+body.dark{
+  --bg:#17312f;
+  --surface:#1e3b38;
+  --surface-2:#244743;
+  --text:#edf9f7;
+  --muted:#c4d9d5;
+  --border:rgba(255,255,255,.11);
+}
+
+body.dark .alternate{
+  background:
+    radial-gradient(circle at 20% 15%,rgba(60,152,143,.18),transparent 25%),
+    #193633;
+}
+
+body.dark .schedule-copy,
+body.dark .note-box,
+body.dark .premium-food,
+body.dark .trip-notice{
+  background:#21423f;
+  color:var(--text);
+}
+
+body.dark .day-weather{
+  background:#21454f;
+}
+
+body.dark .detail-box.plan-box{
+  background:#4b4330;
+}
+
+body.dark .detail-box.route-box{
+  background:#244956;
+}
+
+/* Mobile polish */
+@media(max-width:650px){
+  .hero-shade{
+    background:
+      linear-gradient(180deg,
+        rgba(6,102,94,.74) 0%,
+        rgba(8,112,104,.61) 55%,
+        rgba(12,75,89,.46) 100%);
+  }
+
+  .schedule-copy{
+    padding:16px;
+  }
+}
+
+/* V4.2 accommodation and sightseeing image correction */
+.accommodation-entry .schedule-copy{
+  border:1px solid rgba(229,166,70,.26);
+  background:linear-gradient(180deg,#fffdf8,#fff);
+}
+.accommodation-image-wrap::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 55%,rgba(61,45,16,.23));
+  pointer-events:none;
+}
+.accommodation-badge{
+  background:linear-gradient(135deg,#b66c2e,#df9a43);
+}
+.stay-badge{
+  padding:5px 10px;border-radius:999px;
+  background:#fff1d8;color:#98601e;
+  font-size:.68rem;font-weight:800;white-space:nowrap;
+}
+.stay-map{
+  background:linear-gradient(135deg,#c17a32,#a85c22);
+}
+.illustrative-note{
+  margin-top:11px!important;font-size:.72rem!important;
+  color:var(--muted)!important;font-style:italic;
+}
+body.dark .accommodation-entry .schedule-copy{
+  background:#3d382d;
+  border-color:rgba(242,184,75,.22);
+}
