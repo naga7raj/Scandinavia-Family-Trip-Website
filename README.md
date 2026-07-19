@@ -50,3 +50,14 @@ This edition applies the approved dashboard view:
 - responsive fallback for tablets and phones
 
 The Great Wall of China image has been removed from the refreshed design.
+
+
+## Version 5.2 — Verified Local Images
+
+This version removes the unreliable stock-image mapping that caused the Great Wall of China to appear under Oslo.
+
+- Oslo, cruise and Copenhagen use local images cropped from the approved visual design.
+- Bergen and all remaining sights/activities use locally stored semantic illustrations.
+- Every image is stored inside the package.
+- No itinerary image depends on an external stock-photo URL.
+- Where an exact landmark photograph was not verified, the site intentionally uses a clearly labelled activity illustration rather than an unrelated photograph.
