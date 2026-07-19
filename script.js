@@ -129,6 +129,11 @@ const packingItems = [
   "Carry a small day bag","Keep emergency EUR reserve"
 ];
 
+const dailyWeather={"21 July": ["Bergen", "Cloudy; light afternoon rain", "16° / 12°"], "22 July": ["Bergen", "Cloudy start, then brighter", "20° / 9°"], "23 July": ["Bergen → Oslo", "Cloudy in Bergen; warmer in Oslo", "16–23°"], "24 July": ["Oslo", "Sun and cloud mix", "25° / 12°"], "25 July": ["Copenhagen", "Clouds, sun and a few showers", "20° / 13°"], "26 July": ["Copenhagen", "Morning showers, then brighter", "22° / 14°"], "27 July": ["Copenhagen", "Cloudy; possible afternoon shower", "22° / 14°"]};
+const dailyApps={"21 July": ["KLM", "Skyss", "Google Maps"], "22 July": ["Skyss", "Google Maps", "Weather app"], "23 July": ["Vy", "Ruter", "Google Maps"], "24 July": ["Ruter", "Go Nordic Cruise", "Google Maps"], "25 July": ["Rejseplanen", "Rejsebillet", "Google Maps"], "26 July": ["Rejseplanen", "Tivoli", "Google Maps"], "27 July": ["Rejseplanen", "Rejsebillet", "KLM"]};
+const sightDescriptions={"VilVite Science Centre": "A hands-on science centre with interactive experiments, technology exhibits and activities for children.", "Bryggen": "Bergen’s UNESCO-listed historic wharf, known for colourful wooden buildings and narrow medieval passages.", "Bergenhus Fortress": "One of Norway’s oldest and best-preserved fortifications, set beside Bergen harbour.", "Vågen Harbour": "Bergen’s scenic inner harbour, surrounded by historic waterfront buildings and restaurants.", "Mostraumen Fjord Cruise": "A scenic journey through Osterfjord to narrow Mostraumen, passing steep mountains and waterfalls.", "Fløibanen Funicular": "A short, steep funicular ride from central Bergen to the Mount Fløyen viewpoint.", "Mount Fløyen": "A panoramic viewpoint above Bergen with family walking trails, a playground and forest areas.", "Vy train to Oslo": "One of Europe’s most scenic rail journeys, crossing mountain plateaus, valleys and lakes.", "Oslo Opera House": "A striking waterfront building whose sloping roof can be walked for broad city and fjord views.", "MUNCH Museum": "A major waterfront museum dedicated to Edvard Munch and modern art across multiple floors.", "Vigeland Sculpture Park": "A large open-air sculpture installation inside Frogner Park, featuring more than 200 works.", "Nyhavn": "Copenhagen’s iconic 17th-century harbour, lined with colourful townhouses, cafés and historic boats.", "Copenhagen Canal Cruise": "A relaxed boat tour past canals, palaces, church towers and modern waterfront architecture.", "Amalienborg Palace": "The home of Denmark’s royal family, arranged around an elegant octagonal palace square.", "Tivoli Gardens": "A historic amusement park combining rides, landscaped gardens, restaurants and evening lights.", "Experimentarium": "A large interactive science centre with water, light, energy and human-body exhibits for families."};
+const routeAdvice={"VilVite Science Centre": "From central Bergen, take Bybanen light rail toward Fyllingsdalen and walk a few minutes from Florida stop.", "Bryggen": "From Bergen city centre, it is generally a comfortable 10–15 minute walk.", "Bergenhus Fortress": "Around 8–10 minutes on foot from Bryggen along the harbour.", "Vågen Harbour": "Immediately beside Bryggen and Bergenhus; best explored on foot.", "Mostraumen Fjord Cruise": "Departure is normally from the harbour area; arrive 20–30 minutes early and verify the exact pier.", "Fløibanen Funicular": "About 5–10 minutes’ walk from Bryggen to the lower station.", "Mount Fløyen": "Use Fløibanen uphill; walking down is optional and takes considerably longer.", "Oslo Opera House": "About 8–10 minutes’ walk from Oslo Central Station and Scandic Byporten.", "MUNCH Museum": "Approximately 5 minutes’ walk from the Opera House through Bjørvika.", "Vigeland Sculpture Park": "Take metro/tram from central Oslo toward Majorstuen, then walk roughly 10–15 minutes.", "Nyhavn": "Use metro to Kongens Nytorv, then walk approximately 5 minutes.", "Copenhagen Canal Cruise": "Several departures are close to Nyhavn; confirm the operator’s pier before leaving the hotel.", "Amalienborg Palace": "Roughly 10 minutes on foot from Nyhavn.", "Tivoli Gardens": "Directly beside Copenhagen Central Station; easiest by train, metro or bus to the centre.", "Experimentarium": "Take train toward Hellerup and continue by bus or a short taxi; allow around 30–40 minutes from central Copenhagen."};
+
 function updateCountdown(){
   const el=document.getElementById("countdown"),diff=tripStart-new Date();
   if(diff<=0){el.textContent="The journey has begun";return;}
@@ -137,29 +142,48 @@ function updateCountdown(){
 }
 
 function renderItinerary(){
-  document.getElementById("itineraryList").innerHTML=itinerary.map(day=>`
+  document.getElementById("itineraryList").innerHTML=itinerary.map(day=>{
+    const wx=dailyWeather[day.date]||["City","Check forecast","—"];
+    const appList=dailyApps[day.date]||["Google Maps"];
+    return `
     <article class="day-card">
       <div class="day-header">
         <div class="day-date">${day.date}</div>
-        <div><h3>${day.title}</h3><p><strong>Transport:</strong> ${day.transport}</p><p><strong>Stay:</strong> ${day.stay}</p></div>
+        <div>
+          <h3>${day.title}</h3>
+          <p><strong>Transport:</strong> ${day.transport}</p>
+          <p><strong>Stay:</strong> ${day.stay}</p>
+          <div class="day-tools">${appList.map(a=>`<span class="app-chip">App: ${a}</span>`).join("")}</div>
+        </div>
+      </div>
+      <div class="weather-strip">
+        <div class="weather-pill"><span>Location</span><strong>${wx[0]}</strong></div>
+        <div class="weather-pill"><span>Expected conditions</span><strong>${wx[1]}</strong></div>
+        <div class="weather-pill"><span>Temperature</span><strong>${wx[2]}</strong></div>
       </div>
       <div class="schedule">
-        ${day.schedule.map(item=>`
+        ${day.schedule.map(item=>{
+          const desc=sightDescriptions[item[1]]||"";
+          const route=routeAdvice[item[1]]||"";
+          return `
           <div class="schedule-row">
             <div class="schedule-time">${item[0]}</div>
-            <div class="schedule-copy"><h4>${item[1]}</h4><p>${item[2]}</p>
-            ${item[3]?`<a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${item[3]}">Open in Google Maps ↗</a>`:""}
+            <div class="schedule-copy">
+              <h4>${item[1]}</h4>
+              ${desc?`<p class="sight-description">${desc}</p>`:""}
+              <p>${item[2]}</p>
+              ${route?`<p class="route-advice"><strong>Getting there:</strong> ${route}</p>`:""}
+              ${item[3]?`<a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${item[3]}">Open in Google Maps ↗</a>`:""}
             </div>
-          </div>`).join("")}
+          </div>`}).join("")}
       </div>
       <div class="day-notes">
         <div class="note-box"><h4>Food plan</h4><p>${day.food}</p></div>
         <div class="note-box"><h4>Optional</h4><p>${day.optional}</p></div>
         <div class="note-box note-wide"><h4>Practical notes</h4><ul>${day.notes.map(n=>`<li>${n}</li>`).join("")}</ul></div>
       </div>
-    </article>`).join("");
+    </article>`}).join("");
 }
-
 function renderBookings(){
   const list=document.getElementById("bookingList");
   list.innerHTML=bookings.map(b=>`<article class="booking-card"><h3>${b[0]}</h3><p>${b[1]}</p><span class="status ${b[2]==="Paid"?"status-paid":"status-pending"}">${b[2]}</span></article>`).join("");

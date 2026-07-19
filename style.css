@@ -29,3 +29,28 @@ a{color:inherit}button,input{font:inherit}
 footer{padding:42px 5.5%;text-align:center;color:#fff;background:#061e1d}footer p{margin:0 0 4px;font-weight:800}footer small{color:rgba(255,255,255,.58)}
 @media(max-width:950px){.nav-links{display:none}.city-grid,.booking-grid,.journey-grid{grid-template-columns:repeat(2,1fr)}.city-card:last-child{grid-column:1/-1}.essentials-grid{grid-template-columns:1fr}.quick-stats{grid-template-columns:repeat(2,1fr)}.quick-stats article:nth-child(2){border-right:0}.quick-stats article:nth-child(-n+2){border-bottom:1px solid var(--border)}}
 @media(max-width:650px){.topbar{height:64px}.hero{min-height:720px}.hero h1{font-size:3.45rem}.hero-route{display:none}.quick-stats{margin-top:-42px}.section,.alternate{width:100%;padding:72px 6%}.city-grid,.booking-grid,.journey-grid,.checklist-grid{grid-template-columns:1fr}.city-card:last-child{grid-column:auto}.day-header,.schedule-row{grid-template-columns:1fr;gap:7px}.day-notes{grid-template-columns:1fr}.note-wide{grid-column:auto}.schedule{padding:8px 20px}.day-notes{padding:0 20px 20px}.split-heading{align-items:flex-start;flex-direction:column}.progress-panel{width:100%}.brand span:last-child{display:none}}
+
+/* V2 clarity and family-share improvements */
+.hero-shade{background:linear-gradient(90deg,rgba(3,22,22,.96),rgba(3,28,27,.74) 58%,rgba(3,28,27,.42))}
+.hero h1,.hero-copy,.city-copy h3,.city-copy p,.city-copy span,.city-copy b{text-shadow:0 2px 16px rgba(0,0,0,.68)}
+.city-overlay{background:linear-gradient(180deg,rgba(2,20,20,.1) 18%,rgba(3,25,24,.97) 92%)}
+.city-copy p{color:rgba(255,255,255,.92)}
+.day-header p{color:rgba(255,255,255,.94)}
+.schedule-copy p,.note-box p,.note-box li,.restaurant-card p{color:var(--muted)}
+.weather-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 28px 20px}
+.weather-pill{padding:14px;border-radius:15px;background:var(--surface-2);border:1px solid var(--border)}
+.weather-pill span{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--primary);font-weight:800}
+.weather-pill strong{display:block;margin-top:4px}
+.day-tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.app-chip,.transport-chip{display:inline-flex;align-items:center;padding:7px 10px;border-radius:999px;background:rgba(11,97,92,.1);color:var(--primary);font-size:.76rem;font-weight:800}
+.sight-description{margin-top:5px!important}
+.route-advice{margin-top:8px!important;padding-left:12px;border-left:3px solid var(--gold);font-size:.86rem}
+.restaurant-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.restaurant-card{padding:23px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow)}
+.restaurant-city{display:inline-block;padding:5px 9px;border-radius:999px;background:var(--surface-2);color:var(--primary);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.restaurant-card h3{margin:13px 0 6px}
+.restaurant-actions{display:flex;gap:14px;margin-top:14px}
+.restaurant-actions a{color:var(--primary);font-weight:800;text-decoration:none;font-size:.84rem}
+.restaurant-actions a:hover{text-decoration:underline}
+@media(max-width:950px){.restaurant-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.weather-strip,.restaurant-grid{grid-template-columns:1fr}.weather-strip{margin:0 20px 18px}}
