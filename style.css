@@ -511,3 +511,46 @@ body.dark .accommodation-entry .schedule-copy{
   background:#3d382d;
   border-color:rgba(242,184,75,.22);
 }
+
+/* =========================================================
+   VERSION 5 — COMPLETE VISUAL ITINERARY
+   ========================================================= */
+.activity-entry .schedule-copy{
+  background:linear-gradient(180deg,#ffffff,#fbfefd);
+  border:1px solid rgba(8,120,111,.11);
+}
+.activity-badge{
+  padding:5px 10px;border-radius:999px;
+  background:#e7f4fb;color:#28698f;
+  font-size:.68rem;font-weight:800;white-space:nowrap;
+}
+.activity-image-wrap{
+  min-height:230px;background:
+  linear-gradient(135deg,#eaf7f4,#edf5fb);
+}
+.image-fallback{
+  display:none;min-height:230px;place-items:center;padding:24px;text-align:center;
+  color:var(--muted);font-weight:700;
+}
+.image-wrap.image-error .image-fallback{display:grid}
+.property-subtitle{
+  margin:4px 0 10px!important;color:var(--primary)!important;
+  font-size:.88rem!important;font-weight:800;
+}
+.property-facts{
+  display:flex;flex-wrap:wrap;gap:8px;margin:13px 0 4px;
+}
+.property-facts span{
+  padding:7px 10px;border-radius:999px;
+  background:#fff5df;color:#8a5b20;border:1px solid rgba(229,166,70,.22);
+  font-size:.72rem;font-weight:800;
+}
+.button-row{display:flex;flex-wrap:wrap;gap:10px}
+.official-button{
+  background:linear-gradient(135deg,#436f9c,#31567d);
+}
+.accommodation-entry .sight-image{object-position:center}
+@media(max-width:650px){
+  .button-row{flex-direction:column;align-items:flex-start}
+  .property-facts span{font-size:.68rem}
+}

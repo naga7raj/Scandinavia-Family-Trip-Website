@@ -1,52 +1,35 @@
-# Scandinavia Family Trip — Premium Family Edition V4.2 Accommodation Fix
+# Scandinavia Family Trip — Premium Version 5
 
-Public, mobile-friendly family travel dashboard for 21–27 July 2026.
+Version 5 is the complete visual itinerary for the family trip from 21–27 July 2026.
 
-## Included
+## Main improvements
 
-- Premium hero and day navigation
-- Detailed sightseeing descriptions
-- An image for each major attraction
-- Walking/public-transport advice directly under every attraction
-- Daily weather snapshot and weather advice
-- Daily app recommendations
-- Indian or South Indian restaurant option integrated into every day
-- Google Maps shortcuts
-- Booking tracker, packing checklist, dark mode and print/PDF button
+- Every scheduled activity now has a relevant photograph or visual card.
+- Cruise departure, boarding, ship exploration, meals, transfers and airport activities are no longer blank.
+- Bergen shows the exact booked Airbnb listing name and Fana area.
+- Oslo shows the exact confirmed property: Scandic Byporten.
+- Copenhagen shows the exact confirmed property: CABINN Metro.
+- Each accommodation card includes check-in/check-out facts, route advice, map and official property link.
+- All sightseeing locations retain descriptions, transport advice and maps.
+- Daily weather, apps and Indian/South Indian options remain integrated inside each day.
 
-## Weather snapshot
+## Accommodation privacy
 
-Forecast updated 19 July 2026 for Bergen, Oslo and Copenhagen. Weather can change; recheck each evening and morning.
+The public site deliberately excludes:
+- reservation references
+- PINs and keypad details
+- host phone numbers
+- payment amounts
+- exact private Airbnb street address
 
-## Food notes
+The Bergen property name and area are exact. Its displayed photograph is representative because Airbnb does not permit reliable direct embedding of the private listing image in this public package. Oslo and Copenhagen property identities and official links are exact.
 
-- Bergen: no clearly verified dedicated South Indian restaurant was found, so central Indian restaurants are shown without describing them as South Indian.
-- Oslo: The South Indian Oslo is shown for the main Oslo evening.
-- Copenhagen: The South Indian Vesterbro and Dosa Bar are included.
+## Image behaviour
 
-## Public privacy
+Most images are remote optimized photographs so GitHub Pages remains lightweight. A graceful fallback message appears if any external image host blocks loading.
 
-The site excludes booking references, PINs, QR codes, payment information, personal documents and exact accommodation addresses.
+## Confirmed accommodation information used
 
-## Sources checked
-
-- AccuWeather forecast feed for Bergen, Oslo and Copenhagen, 19 July 2026
-- Visit Bergen: India Gate and Leela
-- The South Indian Denmark official website
-- Dosa Bar official website
-- Restaurant websites and Google Maps search links
-
-Sightseeing photographs are loaded from Unsplash and are illustrative. Verify attraction opening times, restaurant hours and exact transport routing shortly before travel.
-
-
-## V4.1 visual update
-
-The hero and day sections now use brighter teal, blue, coral and warm-gold accents with reduced dark overlays while preserving strong text contrast.
-
-
-## V4.2 correction
-
-- Replaced the incorrect bedroom image that appeared under VilVite Science Centre with a science/technology image.
-- Accommodation previews now appear only at the relevant check-in entries for Bergen, Oslo and Copenhagen.
-- Accommodation cards have their own label and are not counted as sightseeing.
-- Public versions use illustrative accommodation images so exact private property details are not exposed.
+- Bergen: Familievennlig leilighet med gode solforhold, Fana, hosted by Camilla
+- Oslo: Scandic Byporten, Superior Twin Room
+- Copenhagen: CABINN Metro, two Standard Rooms
