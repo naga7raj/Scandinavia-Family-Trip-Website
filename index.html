@@ -2,519 +2,179 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="Scandinavia family trip dashboard for Bergen, Oslo and Copenhagen."
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Scandinavia family trip dashboard for Bergen, Oslo and Copenhagen in July 2026.">
+  <meta name="theme-color" content="#0b4f4b">
   <title>Scandinavia Family Trip 2026</title>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-  <header class="hero" id="home">
-
-    <nav class="navbar">
-
-      <a class="brand" href="#home">
-        Nordic Journey
-      </a>
-
-      <div class="nav-links">
-        <a href="#itinerary">Itinerary</a>
-        <a href="#bookings">Bookings</a>
-        <a href="#packing">Packing</a>
-        <a href="#budget">Budget</a>
-      </div>
-
-      <button
-        id="themeToggle"
-        class="theme-button"
-        aria-label="Toggle dark mode"
-      >
-        ◐
-      </button>
-
+  <header class="topbar">
+    <a class="brand" href="#home">
+      <span class="brand-mark">N</span>
+      <span>Nordic Journey</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#route">Route</a>
+      <a href="#itinerary">Itinerary</a>
+      <a href="#bookings">Bookings</a>
+      <a href="#packing">Packing</a>
+      <a href="#essentials">Essentials</a>
     </nav>
-
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content">
-
-      <p class="eyebrow">
-        Family adventure · July 2026
-      </p>
-
-      <h1>
-        Bergen, Oslo & Copenhagen
-      </h1>
-
-      <p class="hero-description">
-        Our complete family travel dashboard for the Scandinavia journey.
-      </p>
-
-      <div class="hero-buttons">
-
-        <a class="button primary-button" href="#itinerary">
-          View itinerary
-        </a>
-
-        <a class="button secondary-button" href="#packing">
-          Packing checklist
-        </a>
-
-      </div>
-
-      <div class="countdown-card">
-
-        <span>Trip starts in</span>
-
-        <strong id="countdown">
-          Calculating...
-        </strong>
-
-      </div>
-
-    </div>
-
+    <button id="themeToggle" class="icon-button" aria-label="Toggle dark mode">◐</button>
   </header>
 
   <main>
-
-    <section class="summary-section">
-
-      <article class="summary-card">
-        <strong>7</strong>
-        <span>Days</span>
-      </article>
-
-      <article class="summary-card">
-        <strong>3</strong>
-        <span>Cities</span>
-      </article>
-
-      <article class="summary-card">
-        <strong>5</strong>
-        <span>Travellers</span>
-      </article>
-
-      <article class="summary-card">
-        <strong>4</strong>
-        <span>Transport modes</span>
-      </article>
-
+    <section id="home" class="hero">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow light">Family adventure · 21–27 July 2026</p>
+        <h1>Across the heart of Scandinavia</h1>
+        <p class="hero-copy">Bergen’s fjords, Oslo’s waterfront and Copenhagen’s colour — one family journey, organised in one place.</p>
+        <div class="hero-actions">
+          <a class="button button-light" href="#itinerary">Explore the itinerary</a>
+          <a class="button button-glass" href="#packing">Open packing list</a>
+        </div>
+        <div class="countdown-card" aria-live="polite">
+          <span>Departure countdown</span>
+          <strong id="countdown">Calculating…</strong>
+        </div>
+      </div>
+      <div class="hero-route">
+        <span>Amsterdam</span><i></i><span>Bergen</span><i></i><span>Oslo</span><i></i><span>Copenhagen</span><i></i><span>Amsterdam</span>
+      </div>
     </section>
 
-    <section class="section">
+    <section class="quick-stats" aria-label="Trip summary">
+      <article><strong>7</strong><span>Days</span></article>
+      <article><strong>3</strong><span>Cities</span></article>
+      <article><strong>5</strong><span>Travellers</span></article>
+      <article><strong>4</strong><span>Transport modes</span></article>
+    </section>
 
+    <section id="route" class="section">
       <div class="section-heading">
-
-        <p class="eyebrow dark-eyebrow">
-          Our route
-        </p>
-
-        <h2>
-          Three unforgettable stops
-        </h2>
-
+        <p class="eyebrow">The route</p>
+        <h2>Three cities, three distinct experiences</h2>
+        <p>Tap a city to open it directly in Google Maps.</p>
       </div>
-
-      <div class="destination-grid">
-
-        <article class="destination-card bergen-card">
-
-          <div class="destination-overlay"></div>
-
-          <div class="destination-content">
-
-            <span>21–23 July</span>
-
-            <h3>Bergen</h3>
-
-            <p>
-              Fjords, Bryggen and Mount Fløyen.
-            </p>
-
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=Bergen+Norway"
-              target="_blank"
-              rel="noopener"
-            >
-              Open map ↗
-            </a>
-
-          </div>
-
-        </article>
-
-        <article class="destination-card oslo-card">
-
-          <div class="destination-overlay"></div>
-
-          <div class="destination-content">
-
-            <span>23–24 July</span>
-
-            <h3>Oslo</h3>
-
-            <p>
-              Opera House, MUNCH and Vigeland.
-            </p>
-
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=Oslo+Norway"
-              target="_blank"
-              rel="noopener"
-            >
-              Open map ↗
-            </a>
-
-          </div>
-
-        </article>
-
-        <article class="destination-card copenhagen-card">
-
-          <div class="destination-overlay"></div>
-
-          <div class="destination-content">
-
-            <span>25–27 July</span>
-
-            <h3>Copenhagen</h3>
-
-            <p>
-              Nyhavn, Tivoli and Experimentarium.
-            </p>
-
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=Copenhagen+Denmark"
-              target="_blank"
-              rel="noopener"
-            >
-              Open map ↗
-            </a>
-
-          </div>
-
-        </article>
-
+      <div class="city-grid">
+        <a class="city-card bergen" href="https://www.google.com/maps/search/?api=1&query=Bergen+Norway" target="_blank" rel="noopener">
+          <div class="city-overlay"></div>
+          <div class="city-copy"><span>21–23 July</span><h3>Bergen</h3><p>Fjords, Bryggen, Fløibanen and Mount Fløyen.</p><b>Open map ↗</b></div>
+        </a>
+        <a class="city-card oslo" href="https://www.google.com/maps/search/?api=1&query=Oslo+Norway" target="_blank" rel="noopener">
+          <div class="city-overlay"></div>
+          <div class="city-copy"><span>23–24 July</span><h3>Oslo</h3><p>Opera House, MUNCH and Vigeland Sculpture Park.</p><b>Open map ↗</b></div>
+        </a>
+        <a class="city-card copenhagen" href="https://www.google.com/maps/search/?api=1&query=Copenhagen+Denmark" target="_blank" rel="noopener">
+          <div class="city-overlay"></div>
+          <div class="city-copy"><span>25–27 July</span><h3>Copenhagen</h3><p>Nyhavn, canal cruise, Tivoli and Experimentarium.</p><b>Open map ↗</b></div>
+        </a>
       </div>
-
     </section>
 
-    <section
-      id="itinerary"
-      class="section alternate-section"
-    >
-
+    <section class="section journey-section">
       <div class="section-heading">
-
-        <p class="eyebrow dark-eyebrow">
-          Day by day
-        </p>
-
-        <h2>
-          Trip itinerary
-        </h2>
-
+        <p class="eyebrow">Travel connections</p>
+        <h2>The journey at a glance</h2>
       </div>
-
-      <div
-        id="itineraryList"
-        class="timeline"
-      ></div>
-
+      <div class="journey-grid">
+        <article class="journey-card"><div class="journey-icon">✈</div><span>21 July</span><h3>Amsterdam → Bergen</h3><p>Flight and local transfer to Bergen.</p></article>
+        <article class="journey-card"><div class="journey-icon">🚆</div><span>23 July · 08:08–15:09</span><h3>Bergen → Oslo</h3><p>Scenic Vy railway journey across Norway.</p></article>
+        <article class="journey-card"><div class="journey-icon">⛴</div><span>24 July · 16:30</span><h3>Oslo → Copenhagen</h3><p>Go Nordic overnight cruise.</p></article>
+        <article class="journey-card"><div class="journey-icon">✈</div><span>27 July · 19:10</span><h3>Copenhagen → Amsterdam</h3><p>KLM return flight.</p></article>
+      </div>
     </section>
 
-    <section class="section">
-
+    <section id="itinerary" class="section alternate">
       <div class="section-heading">
-
-        <p class="eyebrow dark-eyebrow">
-          Getting around
-        </p>
-
-        <h2>
-          Transport overview
-        </h2>
-
+        <p class="eyebrow">Day by day</p>
+        <h2>Detailed family itinerary</h2>
+        <p>Timings, practical notes, food plans and map shortcuts for each day.</p>
       </div>
-
-      <div class="transport-grid">
-
-        <article class="info-card">
-
-          <div class="card-icon">✈</div>
-
-          <h3>Flights</h3>
-
-          <p>
-            Amsterdam → Bergen
-            <br>
-            Copenhagen → Amsterdam
-          </p>
-
-        </article>
-
-        <article class="info-card">
-
-          <div class="card-icon">🚆</div>
-
-          <h3>Train</h3>
-
-          <p>
-            Bergen → Oslo
-            <br>
-            23 July · 08:08–15:09
-          </p>
-
-        </article>
-
-        <article class="info-card">
-
-          <div class="card-icon">⛴</div>
-
-          <h3>Overnight cruise</h3>
-
-          <p>
-            Oslo → Copenhagen
-            <br>
-            24 July · 16:30
-          </p>
-
-        </article>
-
-        <article class="info-card">
-
-          <div class="card-icon">🚇</div>
-
-          <h3>Local travel</h3>
-
-          <p>
-            Skyss, Ruter, Rejsebillet and Rejseplanen
-          </p>
-
-        </article>
-
-      </div>
-
+      <div id="itineraryList" class="itinerary-list"></div>
     </section>
 
-    <section
-      id="bookings"
-      class="section alternate-section"
-    >
-
+    <section id="bookings" class="section">
       <div class="section-heading split-heading">
-
         <div>
-
-          <p class="eyebrow dark-eyebrow">
-            Stay organised
-          </p>
-
-          <h2>
-            Booking tracker
-          </h2>
-
+          <p class="eyebrow">Stay organised</p>
+          <h2>Booking tracker</h2>
+          <p>No booking references or security details are shown here.</p>
         </div>
-
-        <div class="progress-box">
-
-          <span id="bookingProgressText">
-            0% ready
-          </span>
-
-          <div class="progress-track">
-
-            <div id="bookingProgressBar"></div>
-
-          </div>
-
+        <div class="progress-panel">
+          <span id="bookingProgressText">0% ready</span>
+          <div class="progress-track"><div id="bookingProgressBar"></div></div>
         </div>
-
       </div>
-
-      <div
-        id="bookingList"
-        class="booking-grid"
-      ></div>
-
+      <div id="bookingList" class="booking-grid"></div>
     </section>
 
-    <section
-      id="packing"
-      class="section"
-    >
-
+    <section id="packing" class="section alternate">
       <div class="section-heading split-heading">
-
         <div>
-
-          <p class="eyebrow dark-eyebrow">
-            Before departure
-          </p>
-
-          <h2>
-            Packing checklist
-          </h2>
-
+          <p class="eyebrow">Before departure</p>
+          <h2>Smart packing checklist</h2>
+          <p>Your selections are saved automatically on this device.</p>
         </div>
-
-        <button
-          id="resetPacking"
-          class="text-button"
-        >
-          Reset checklist
-        </button>
-
+        <button id="resetPacking" class="text-button">Reset checklist</button>
       </div>
-
-      <div
-        id="packingList"
-        class="checklist-grid"
-      ></div>
-
+      <div id="packingList" class="checklist-grid"></div>
     </section>
 
-    <section
-      id="budget"
-      class="section alternate-section"
-    >
-
+    <section id="essentials" class="section">
       <div class="section-heading">
-
-        <p class="eyebrow dark-eyebrow">
-          Travel money
-        </p>
-
-        <h2>
-          Budget snapshot
-        </h2>
-
+        <p class="eyebrow">Useful essentials</p>
+        <h2>Money, apps and emergency information</h2>
+      </div>
+      <div class="essentials-grid">
+        <article class="essential-card">
+          <span class="kicker">Suggested travel money</span>
+          <h3>NOK 7,000</h3>
+          <p>For Bergen and Oslo.</p>
+          <h3>DKK 6,000</h3>
+          <p>For Copenhagen.</p>
+          <h3>€300–€500</h3>
+          <p>Emergency reserve.</p>
+        </article>
+        <article class="essential-card">
+          <span class="kicker">Payment advice</span>
+          <h3>Always choose local currency</h3>
+          <p>Choose NOK in Norway and DKK in Denmark. Avoid card-terminal conversion into euros.</p>
+          <p>Convert currencies on weekdays where possible.</p>
+        </article>
+        <article class="essential-card">
+          <span class="kicker">Emergency</span>
+          <h3>112</h3>
+          <p>European emergency number for police, ambulance and fire.</p>
+          <p>Keep travel insurance and embassy details available offline.</p>
+        </article>
       </div>
 
-      <div class="budget-grid">
-
-        <article class="currency-card">
-
-          <span>
-            Norwegian krone
-          </span>
-
-          <strong>
-            NOK 7,000
-          </strong>
-
-          <p>
-            Suggested balance for Bergen and Oslo.
-          </p>
-
-        </article>
-
-        <article class="currency-card">
-
-          <span>
-            Danish krone
-          </span>
-
-          <strong>
-            DKK 6,000
-          </strong>
-
-          <p>
-            Suggested balance for Copenhagen.
-          </p>
-
-        </article>
-
-        <article class="currency-card">
-
-          <span>
-            Euro reserve
-          </span>
-
-          <strong>
-            €300–€500
-          </strong>
-
-          <p>
-            Emergency and backup reserve.
-          </p>
-
-        </article>
-
+      <div class="apps-panel">
+        <h3>Recommended apps</h3>
+        <div class="apps-grid">
+          <span>Skyss</span><span>Vy</span><span>Ruter</span><span>Rejsebillet</span><span>Rejseplanen</span>
+          <span>Google Maps</span><span>Booking.com</span><span>Airbnb</span><span>Revolut</span><span>KLM</span>
+        </div>
       </div>
 
-      <article class="tip-card">
-
-        <strong>
-          Payment tip
-        </strong>
-
-        <p>
-          Choose local currency at card terminals and avoid conversion into euros.
-        </p>
-
-      </article>
-
+      <div class="weather-note">
+        <div>☔</div>
+        <div><h3>Weather approach</h3><p>Check each city 48–72 hours before arrival. Carry layered clothing, waterproof jackets and compact umbrellas even when the forecast looks favourable.</p></div>
+      </div>
     </section>
-
-    <section class="section">
-
-      <div class="section-heading">
-
-        <p class="eyebrow dark-eyebrow">
-          Useful shortcuts
-        </p>
-
-        <h2>
-          Travel apps
-        </h2>
-
-      </div>
-
-      <div class="apps-grid">
-
-        <span>Skyss</span>
-        <span>Vy</span>
-        <span>Ruter</span>
-        <span>Rejsebillet</span>
-        <span>Rejseplanen</span>
-        <span>Google Maps</span>
-        <span>Booking.com</span>
-        <span>Airbnb</span>
-        <span>Revolut</span>
-        <span>KLM</span>
-
-      </div>
-
-    </section>
-
   </main>
 
   <footer>
-
-    <p>
-      Scandinavia Family Trip · July 2026
-    </p>
-
-    <small>
-      Public dashboard with no booking references, security codes or payment details.
-    </small>
-
+    <p>Scandinavia Family Trip · July 2026</p>
+    <small>Family dashboard — intentionally excludes booking PINs, security codes, QR codes, payment details and personal documents.</small>
   </footer>
 
   <script src="script.js"></script>
-
 </body>
 </html>
